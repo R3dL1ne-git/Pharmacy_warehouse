@@ -5,8 +5,168 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pharmacy_warehouse"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="800" Width="1500"
+        WindowStartupLocation="CenterScreen">
+
+    <TabControl x:Name="tabControl" IsVisibleChanged="TabControl_IsVisibleChanged">
+        <TabItem Header="Категории лекарств">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <DataGrid x:Name="dataGridCategoryDrugs" Grid.ColumnSpan="3" AutoGenerateColumns="False" IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding id_category}" Width="auto"/>
+                        <DataGridTextColumn Header="Категория лекарства" Binding="{Binding category_name}" Width="auto"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <Button x:Name="addCategoryDrugsButtonClick" Content="Добавить" Grid.Row="2" Grid.Column="0"/>
+                <Button x:Name="editCategoryDrugsButtonClick" Content="Редактировать" Grid.Row="2" Grid.Column="1"/>
+                <Button x:Name="deleteCategoryDrugsButtonClick" Content="Удалить" Grid.Row="2" Grid.Column="2"/>
+            </Grid>
+        </TabItem>
         
-    </Grid>
+        <TabItem Header="Поставщики">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <DataGrid x:Name="dataGridSupplier" Grid.ColumnSpan="3" AutoGenerateColumns="False" IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding id_supplier}" Width="auto"/>
+                        <DataGridTextColumn Header="Название" Binding="{Binding name_supplier}" Width="auto"/>
+                        <DataGridTextColumn Header="Адрес" Binding="{Binding address_supplier}" Width="auto"/>
+                        <DataGridTextColumn Header="Телефон" Binding="{Binding phone_supplier}" Width="auto"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <Button x:Name="addSupplierButtonClick" Content="Добавить" Grid.Row="2" Grid.Column="0"/>
+                <Button x:Name="editSuppliersButtonClick" Content="Редактировать" Grid.Row="2" Grid.Column="1"/>
+                <Button x:Name="deleteSupplierButtonClick" Content="Удалить" Grid.Row="2" Grid.Column="2"/>
+            </Grid>
+        </TabItem>
+        
+        <TabItem Header="Лекарства ">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <DataGrid x:Name="dataGridDrug" Grid.ColumnSpan="3" AutoGenerateColumns="False" IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding id_drug}" Width="auto"/>
+                        <DataGridTextColumn Header="Название" Binding="{Binding name_drug}" Width="auto"/>
+                        <DataGridTextColumn Header="Категория лекарства" Binding="{Binding Category_drug.category_name}" Width="auto"/>
+                        <DataGridTextColumn Header="Производитель" Binding="{Binding Supplier.name_supplier}" Width="auto"/>
+                        <DataGridTextColumn Header="Цена" Binding="{Binding price}" Width="auto"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <Button x:Name="addDrugButtonClick" Content="Добавить" Grid.Row="2" Grid.Column="0"/>
+                <Button x:Name="editDrugButtonClick" Content="Редактировать" Grid.Row="2" Grid.Column="1"/>
+                <Button x:Name="deleteDrugButtonClick" Content="Удалить" Grid.Row="2" Grid.Column="2"/>
+            </Grid>
+        </TabItem>
+        
+        <TabItem Header="Аптеки">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <DataGrid x:Name="dataGridDrugstore" Grid.ColumnSpan="3" AutoGenerateColumns="False" IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding id_drugstore}" Width="auto"/>
+                        <DataGridTextColumn Header="Название" Binding="{Binding drugstore_name}" Width="auto"/>
+                        <DataGridTextColumn Header="Адрес" Binding="{Binding address_drugstore}" Width="auto"/>
+                        <DataGridTextColumn Header="Телефон" Binding="{Binding phone_drugstore}" Width="auto"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <Button x:Name="addDrugstoreButtonClick" Content="Добавить" Grid.Row="2" Grid.Column="0"/>
+                <Button x:Name="editDrugstoreButtonClick" Content="Редактировать" Grid.Row="2" Grid.Column="1"/>
+                <Button x:Name="deleteDrugstoreButtonClick" Content="Удалить" Grid.Row="2" Grid.Column="2"/>
+            </Grid>
+        </TabItem>
+        
+        <TabItem Header="Заявки">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <DataGrid x:Name="dataGridApplications" Grid.ColumnSpan="3" AutoGenerateColumns="False" IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding id_applications}" Width="auto"/>
+                        <DataGridTextColumn Header="Аптека" Binding="{Binding Drugstore.drugstore_name}" Width="auto"/>
+                        <DataGridTextColumn Header="Дата составления" Binding="{Binding date_of_the_applications}" Width="auto"/>
+                        <DataGridTextColumn Header="Дата выполнения" Binding="{Binding applications_completion_date}" Width="auto"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <Button x:Name="addApplicationsButtonClick" Content="Добавить" Grid.Row="2" Grid.Column="0"/>
+                <Button x:Name="editApplicationsButtonClick" Content="Редактировать" Grid.Row="2" Grid.Column="1"/>
+                <Button x:Name="deleteApplicationsButtonClick" Content="Удалить" Grid.Row="2" Grid.Column="2"/>
+            </Grid>
+        </TabItem>
+        
+        <TabItem Header="Закупки">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <DataGrid x:Name="dataGridPurchase" Grid.ColumnSpan="3" AutoGenerateColumns="False" IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding id_purchase}" Width="auto"/>
+                        <DataGridTextColumn Header="Номер заявки" Binding="{Binding Applications.id_applications}" Width="auto"/>
+                        <DataGridTextColumn Header="Название лекарства" Binding="{Binding Drug.name_drug}" Width="auto"/>
+                        <DataGridTextColumn Header="Количество" Binding="{Binding number_of_drugs}" Width="auto"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <Button x:Name="addPurchaseButtonClick" Content="Добавить" Grid.Row="2" Grid.Column="0"/>
+                <Button x:Name="editPurchaseButtonClick" Content="Редактировать" Grid.Row="2" Grid.Column="1"/>
+                <Button x:Name="deletePurchaseButtonClick" Content="Удалить" Grid.Row="2" Grid.Column="2"/>
+            </Grid>
+        </TabItem>
+        
+        <TabItem Header="Выход">
+
+        </TabItem>
+    </TabControl>
 </Window>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pharmacy_warehouse.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,27 @@ namespace Pharmacy_warehouse
         public MainWindow()
         {
             InitializeComponent();
+            dataGridCategoryDrugs.ItemsSource = AptekaEntities.GetContext().Caterory_drug.ToList();
+            dataGridSupplier.ItemsSource = AptekaEntities.GetContext().Supplier.ToList();
+            dataGridPurchase.ItemsSource = AptekaEntities.GetContext().Purchase.ToList();
+            dataGridDrugstore.ItemsSource = AptekaEntities.GetContext().Drugstore.ToList();
+            dataGridDrug.ItemsSource = AptekaEntities.GetContext().Drug.ToList();
+            dataGridApplications.ItemsSource = AptekaEntities.GetContext().Applications.ToList();
+
+
+        }
+
+        private void TabControl_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            AptekaEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+
+            dataGridCategoryDrugs.ItemsSource = AptekaEntities.GetContext().Caterory_drug.ToList();
+            dataGridSupplier.ItemsSource = AptekaEntities.GetContext().Supplier.ToList();
+            dataGridPurchase.ItemsSource = AptekaEntities.GetContext().Purchase.ToList();
+            dataGridDrugstore.ItemsSource = AptekaEntities.GetContext().Drugstore.ToList();
+            dataGridDrug.ItemsSource = AptekaEntities.GetContext().Drug.ToList();
+            dataGridApplications.ItemsSource = AptekaEntities.GetContext().Applications.ToList();
+
         }
     }
 }

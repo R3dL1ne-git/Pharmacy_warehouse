@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b1ffa0673f7540738ade9db85c460959" Name="Diagram1">
+        <EntityTypeShape EntityType="AptekaModel.Applications" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AptekaModel.Caterory_drug" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AptekaModel.Drug" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="AptekaModel.Drugstore" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AptekaModel.Purchase" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AptekaModel.Roles" Width="1.5" PointX="5.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AptekaModel.Supplier" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AptekaModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AptekaModel.Users" Width="1.5" PointX="8" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="AptekaModel.FK__Applicati__id_dr__6521F869" ManuallyRouted="false" />
+        <AssociationConnector Association="AptekaModel.FK__Purchase__id_app__67FE6514" ManuallyRouted="false" />
+        <AssociationConnector Association="AptekaModel.FK__Drug__id_categor__5E74FADA" ManuallyRouted="false" />
+        <AssociationConnector Association="AptekaModel.FK__Drug__id_supplie__5F691F13" ManuallyRouted="false" />
+        <AssociationConnector Association="AptekaModel.FK__Purchase__id_dru__68F2894D" ManuallyRouted="false" />
+        <AssociationConnector Association="AptekaModel.FK__Users__id_role__6DB73E6A" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
