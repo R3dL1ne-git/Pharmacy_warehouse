@@ -251,5 +251,59 @@ namespace Pharmacy_warehouse
                 }
             }
         }
+
+        private void searchTextBoxSupplier_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string searchText = searchTextBoxSupplier.Text;
+            ICollectionView view = CollectionViewSource.GetDefaultView(dataGridSupplier.ItemsSource);
+            if (string.IsNullOrEmpty(searchText))
+            {
+                view.Filter = null;
+            }
+            else
+            {
+                view.Filter = obj =>
+                {
+                    var name_supplier = obj.GetType().GetProperty("name_supplier").GetValue(obj, null);
+                    return name_supplier != null && name_supplier.ToString().IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0;
+                };
+            }
+        }
+
+        private void searchTextBoxDrug_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string searchText = searchTextBoxDrug.Text;
+            ICollectionView view = CollectionViewSource.GetDefaultView(dataGridDrug.ItemsSource);
+            if (string.IsNullOrEmpty(searchText))
+            {
+                view.Filter = null;
+            }
+            else
+            {
+                view.Filter = obj =>
+                {
+                    var name_drug = obj.GetType().GetProperty("name_drug").GetValue(obj, null);
+                    return name_drug != null && name_drug.ToString().IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0;
+                };
+            }
+        }
+
+        private void searchTextBoxDrugstore_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string searchText = searchTextBoxDrugstore.Text;
+            ICollectionView view = CollectionViewSource.GetDefaultView(dataGridDrugstore.ItemsSource);
+            if (string.IsNullOrEmpty(searchText))
+            {
+                view.Filter = null;
+            }
+            else
+            {
+                view.Filter = obj =>
+                {
+                    var drugstore_name = obj.GetType().GetProperty("drugstore_name").GetValue(obj, null);
+                    return drugstore_name != null && drugstore_name.ToString().IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0;
+                };
+            }
+        }  
     }
 }

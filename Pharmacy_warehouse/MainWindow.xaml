@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pharmacy_warehouse"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1500"
+        Title="Главная форма" Height="800" Width="1500"
+        MinHeight="800" MinWidth="1500"
         WindowStartupLocation="CenterScreen"
         Activated="Window_Activated">
     
@@ -54,11 +55,18 @@
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Width="200">
+                    <Label Content="Поиск:" HorizontalAlignment="Center"/>
+                    <TextBox x:Name="searchTextBoxSupplier" TextChanged="searchTextBoxSupplier_TextChanged" Height="50"/>
+                </StackPanel>
+
                 <DataGrid x:Name="dataGridSupplier" Grid.ColumnSpan="3" AutoGenerateColumns="False" IsReadOnly="True">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="ID" Binding="{Binding id_supplier}" Width="auto"/>
@@ -86,11 +94,18 @@
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Width="200">
+                    <Label Content="Поиск:" HorizontalAlignment="Center"/>
+                    <TextBox x:Name="searchTextBoxDrug" TextChanged="searchTextBoxDrug_TextChanged" Height="50"/>
+                </StackPanel>
+
                 <DataGrid x:Name="dataGridDrug" Grid.ColumnSpan="3" AutoGenerateColumns="False" IsReadOnly="True">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="ID" Binding="{Binding id_drug}" Width="auto"/>
@@ -119,11 +134,18 @@
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Width="200">
+                    <Label Content="Поиск:" HorizontalAlignment="Center"/>
+                    <TextBox x:Name="searchTextBoxDrugstore" TextChanged="searchTextBoxDrugstore_TextChanged" Height="50"/>
+                </StackPanel>
+
                 <DataGrid x:Name="dataGridDrugstore" Grid.ColumnSpan="3" AutoGenerateColumns="False" IsReadOnly="True">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="ID" Binding="{Binding id_drugstore}" Width="auto"/>
@@ -156,6 +178,7 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+
                 <DataGrid x:Name="dataGridApplications" Grid.ColumnSpan="3" AutoGenerateColumns="False" IsReadOnly="True">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="ID" Binding="{Binding id_applications}" Width="auto"/>
@@ -188,6 +211,7 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+
                 <DataGrid x:Name="dataGridPurchase" Grid.ColumnSpan="3" AutoGenerateColumns="False" IsReadOnly="True">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="ID" Binding="{Binding id_purchase}" Width="auto"/>

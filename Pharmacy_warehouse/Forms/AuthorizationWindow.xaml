@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pharmacy_warehouse.Forms"
         mc:Ignorable="d"
-        Title="AuthorizationWindow" Height="320" Width="300" WindowStartupLocation="CenterScreen">
+        Title="Окно авторизации" Height="320" Width="300" WindowStartupLocation="CenterScreen"
+        MinHeight="320" MinWidth="300">
 
     <StackPanel>
         <Label Content="Добро пожаловать! Введите данные." HorizontalAlignment="Center"/>

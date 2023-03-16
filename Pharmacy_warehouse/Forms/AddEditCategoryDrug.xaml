@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pharmacy_warehouse.Forms"
         mc:Ignorable="d"
-        Title="AddEditCategoryDrug" Height="450" Width="800">
+        WindowStartupLocation="CenterScreen"
+        Title="Категория лекарств" Height="250" Width="800"
+        MinHeight="250" MinWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
@@ -17,9 +19,9 @@
 
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Название категории"/>
+        <TextBlock Text="Название категории" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <TextBox Text="{Binding category_name}" Grid.Column="1"/>
+        <TextBox Text="{Binding category_name}" Grid.Column="1" Height="30"/>
 
         <Button Name="btnSave" Content="Сохранить" Height="30" Width="200" Grid.Column="1" Grid.Row="4" Click="btnSave_Click"/>
     </Grid>
