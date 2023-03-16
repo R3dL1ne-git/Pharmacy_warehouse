@@ -6,9 +6,10 @@
         xmlns:local="clr-namespace:Pharmacy_warehouse"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1500"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        Activated="Window_Activated">
 
-    <TabControl x:Name="tabControl" IsVisibleChanged="TabControl_IsVisibleChanged">
+    <TabControl x:Name="tabControl">
         <TabItem Header="Категории лекарств">
             <Grid>
                 <Grid.RowDefinitions>
@@ -28,7 +29,7 @@
                     </DataGrid.Columns>
                 </DataGrid>
 
-                <Button x:Name="addCategoryDrugsButtonClick" Content="Добавить" Grid.Row="2" Grid.Column="0"/>
+                <Button x:Name="addCategoryDrugsButtonClick" Content="Добавить" Grid.Row="2" Grid.Column="0" Click="addCategoryDrugsButtonClick_Click"/>
                 <Button x:Name="editCategoryDrugsButtonClick" Content="Редактировать" Grid.Row="2" Grid.Column="1"/>
                 <Button x:Name="deleteCategoryDrugsButtonClick" Content="Удалить" Grid.Row="2" Grid.Column="2"/>
             </Grid>
@@ -54,13 +55,13 @@
                     </DataGrid.Columns>
                 </DataGrid>
 
-                <Button x:Name="addSupplierButtonClick" Content="Добавить" Grid.Row="2" Grid.Column="0"/>
+                <Button x:Name="addSupplierButtonClick" Content="Добавить" Grid.Row="2" Grid.Column="0" Click="addSupplierButtonClick_Click"/>
                 <Button x:Name="editSuppliersButtonClick" Content="Редактировать" Grid.Row="2" Grid.Column="1"/>
                 <Button x:Name="deleteSupplierButtonClick" Content="Удалить" Grid.Row="2" Grid.Column="2"/>
             </Grid>
         </TabItem>
         
-        <TabItem Header="Лекарства ">
+        <TabItem Header="Лекарства">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -75,15 +76,15 @@
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="ID" Binding="{Binding id_drug}" Width="auto"/>
                         <DataGridTextColumn Header="Название" Binding="{Binding name_drug}" Width="auto"/>
-                        <DataGridTextColumn Header="Категория лекарства" Binding="{Binding Category_drug.category_name}" Width="auto"/>
+                        <DataGridTextColumn Header="Категория лекарства" Binding="{Binding Caterory_drug.category_name}" Width="auto"/>
                         <DataGridTextColumn Header="Производитель" Binding="{Binding Supplier.name_supplier}" Width="auto"/>
                         <DataGridTextColumn Header="Цена" Binding="{Binding price}" Width="auto"/>
                     </DataGrid.Columns>
                 </DataGrid>
 
-                <Button x:Name="addDrugButtonClick" Content="Добавить" Grid.Row="2" Grid.Column="0"/>
-                <Button x:Name="editDrugButtonClick" Content="Редактировать" Grid.Row="2" Grid.Column="1"/>
-                <Button x:Name="deleteDrugButtonClick" Content="Удалить" Grid.Row="2" Grid.Column="2"/>
+                <Button x:Name="addDrugButtonClick" Content="Добавить" Grid.Row="2" Grid.Column="0" Click="addDrugButtonClick_Click"/>
+                <Button x:Name="editDrugButtonClick" Content="Редактировать" Grid.Row="2" Grid.Column="1" Click="editDrugButtonClick_Click"/>
+                <Button x:Name="deleteDrugButtonClick" Content="Удалить" Grid.Row="2" Grid.Column="2" Click="deleteDrugButtonClick_Click"/>
             </Grid>
         </TabItem>
         
@@ -107,7 +108,7 @@
                     </DataGrid.Columns>
                 </DataGrid>
 
-                <Button x:Name="addDrugstoreButtonClick" Content="Добавить" Grid.Row="2" Grid.Column="0"/>
+                <Button x:Name="addDrugstoreButtonClick" Content="Добавить" Grid.Row="2" Grid.Column="0" Click="addDrugstoreButtonClick_Click"/>
                 <Button x:Name="editDrugstoreButtonClick" Content="Редактировать" Grid.Row="2" Grid.Column="1"/>
                 <Button x:Name="deleteDrugstoreButtonClick" Content="Удалить" Grid.Row="2" Grid.Column="2"/>
             </Grid>
@@ -133,7 +134,7 @@
                     </DataGrid.Columns>
                 </DataGrid>
 
-                <Button x:Name="addApplicationsButtonClick" Content="Добавить" Grid.Row="2" Grid.Column="0"/>
+                <Button x:Name="addApplicationsButtonClick" Content="Добавить" Grid.Row="2" Grid.Column="0" Click="addApplicationsButtonClick_Click"/>
                 <Button x:Name="editApplicationsButtonClick" Content="Редактировать" Grid.Row="2" Grid.Column="1"/>
                 <Button x:Name="deleteApplicationsButtonClick" Content="Удалить" Grid.Row="2" Grid.Column="2"/>
             </Grid>
@@ -159,7 +160,7 @@
                     </DataGrid.Columns>
                 </DataGrid>
 
-                <Button x:Name="addPurchaseButtonClick" Content="Добавить" Grid.Row="2" Grid.Column="0"/>
+                <Button x:Name="addPurchaseButtonClick" Content="Добавить" Grid.Row="2" Grid.Column="0" Click="addPurchaseButtonClick_Click"/>
                 <Button x:Name="editPurchaseButtonClick" Content="Редактировать" Grid.Row="2" Grid.Column="1"/>
                 <Button x:Name="deletePurchaseButtonClick" Content="Удалить" Grid.Row="2" Grid.Column="2"/>
             </Grid>

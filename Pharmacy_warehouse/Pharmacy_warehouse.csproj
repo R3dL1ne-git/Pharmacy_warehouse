@@ -64,6 +64,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Forms\AddEditApplicationsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\AddEditCategoryDrug.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\AddEditDrugstoreWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\AddEditDrugWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\AddEditPurchaseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\AddEditSupplierWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Forms\AuthorizationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -77,6 +101,24 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Classes\PageManager.cs" />
+    <Compile Include="Forms\AddEditApplicationsWindow.xaml.cs">
+      <DependentUpon>AddEditApplicationsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddEditCategoryDrug.xaml.cs">
+      <DependentUpon>AddEditCategoryDrug.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddEditDrugstoreWindow.xaml.cs">
+      <DependentUpon>AddEditDrugstoreWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddEditDrugWindow.xaml.cs">
+      <DependentUpon>AddEditDrugWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddEditPurchaseWindow.xaml.cs">
+      <DependentUpon>AddEditPurchaseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddEditSupplierWindow.xaml.cs">
+      <DependentUpon>AddEditSupplierWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AuthorizationWindow.xaml.cs">
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
     </Compile>
