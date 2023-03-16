@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Pharmacy_warehouse.Classes;
+using Pharmacy_warehouse.Model;
+using System;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Pharmacy_warehouse.Forms
 {
@@ -19,14 +11,39 @@ namespace Pharmacy_warehouse.Forms
     /// </summary>
     public partial class AddEditDrugstoreWindow : Window
     {
-        public AddEditDrugstoreWindow()
+        private Drugstore _currentDrugstore = new Drugstore();
+        public AddEditDrugstoreWindow(Drugstore selectedDrugstore)
         {
             InitializeComponent();
+
+            if (selectedDrugstore != null)
+            {
+                _currentDrugstore = selectedDrugstore;
+            }
+
+            DataContext = _currentDrugstore;
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
+            StringBuilder errors = new StringBuilder();
 
+            if (_currentDrugstore.id_drugstore == 0)
+            {
+                AptekaEntities.GetContext().Drugstore.Add(_currentDrugstore);
+            }
+
+            try
+            {
+                AptekaEntities.GetContext().SaveChanges();
+                MessageBox.Show("Информация сохранена!");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+                //throw;
+            }
         }
     }
 }
